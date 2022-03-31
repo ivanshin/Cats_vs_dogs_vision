@@ -20,11 +20,7 @@ class ImgsDataset(Dataset):
         self.img_names = img_names_series.to_list()
         self.labels = labels_series.to_list()
         self.dir = img_folder
-
-        if (transforms_ == None):
-            self.transforms_ = transforms.Compose([transforms.Resize(220), transforms.PILToTensor()])
-        else:
-            self.transforms_ = transforms_
+        self.transforms = transforms_
 
 
     def __len__(self):
@@ -40,11 +36,19 @@ class ImgsDataset(Dataset):
 
         image = Image.open(img_name)
 
-        trsfmd_img = self.transforms_(image)
+        if self.transforms:
+            image = self.transforms(image)
+            image = image.numpy()
+            return image.astype('float32'), self.labels[idx]
+        else:
+            self.transforms_ = transforms.Compose([transforms.Resize((256,256)), transforms.ToTensor()])
+            image = self.transforms_(image)
+            image = image.numpy()
+            return image.astype('float32'), self.labels[idx]
 
 
-        label = self.labels[idx]
 
-        sample = {'image': trsfmd_img, 'label': label}
-        return sample
+        
+        #return sample
+        return trsfmd_img, label
     
