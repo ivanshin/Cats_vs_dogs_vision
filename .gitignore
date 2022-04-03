@@ -1100,3 +1100,4 @@
 data/*
 __pycache__/*
 __pycache__/img_dataset_class.cpython-310.pyc
+saved_models/*
