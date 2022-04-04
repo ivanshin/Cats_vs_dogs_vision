@@ -4,7 +4,7 @@ Competition link: https://www.kaggle.com/competitions/dogs-vs-cats
 
 ## Install requirements
 
-Use the package manager [pip] (https://pip.pypa.io/en/stable/) to install requirements.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requirements.
 
 ```bash
 pip install -r requiremetns.txt
