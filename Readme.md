@@ -12,4 +12,4 @@ pip install -r requiremetns.txt
 
 ## Main features
 
-This attemp includes data preparation, simple EDA, self-made CNN and transfer learning of DenNet121 and ResNet18 in same conditions.
+This attemp includes data preparation, simple EDA, self-made CNN and transfer learning of the DenNet121 and ResNet18 in same the conditions.
